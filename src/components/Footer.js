@@ -1,15 +1,28 @@
 import React from "react";
+import Logo from '../Assets/Img/logo.png'
+
 
 function FooterApp() {
     return (
         <footer class="bg-light text-center text-lg-start" >
     
         <div class="container p-4">
-          
-          <div class="row">
+       
+          <div class="row m-0">
+
+          <div class="col-lg-3 col-md-12 mb-4 mb-md-0">
+     
+        <img
+              alt=""
+              src={Logo}
+              width="200"
+              height="200"
+              className=""
+            />
+          </div>
             
-            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-              <h5 class="text-uppercase text-center">Hecho Por:</h5>
+            <div class="col-lg-5 col-md-12 mb-4 mb-md-0">
+              <h5 class="text-uppercase text-center ">Hecho Por:</h5>
       
               <p class="text-center">
                Antony Camilo Linares Portillo
@@ -18,7 +31,7 @@ function FooterApp() {
             
       
             
-            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+            <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
               <h5 class="text-uppercase text-center">Contacto</h5>
       
               <p class="text-center">
