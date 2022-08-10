@@ -1,32 +1,33 @@
 import './App.css';
-import NavbarApp from './components/Navbar';
+// import NavbarApp from './components/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import CarouselApp from './components/Carousel';
-import TextoApp from './components/Texto';
-import FooterApp from './components/Footer';
-import Index from './components/Cards/Index';
+// import CarouselApp from './components/Carousel';
+// import TextoApp from './components/Texto';
+// import FooterApp from './components/Footer';
+// import Index from './components/Cards/Index';
+import { Home } from './Pages/Home/Index';
+import {Route, Routes} from 'react-router-dom';
+import { PersonajesApp } from './Pages/Personajes/Index';
+import { PlanetasApp } from './Pages/Planetas/Index';
+import NavbarApp from './components/Navbar/Navbar';
+import FooterApp from './components/Footer/Footer';
 
 
 
 function App() {
   return (
     <div className="App">
-      <NavbarApp/>
-      <div className='container mt-4'>
-      <CarouselApp/>
-      </div>
-      
-      <div className='container'>
-      <TextoApp/>
-      </div>
-
-      <div className='ContainerCard'>
-      <Index/>
-      </div>
-      
-      <FooterApp/>
+       <NavbarApp/>
+     <Routes>
+       <Route path='/' element={<Home />}/>
+       <Route path='/personajes' element={<PersonajesApp />}/>
+       <Route path='/planetas' element={<PlanetasApp />}/>
+     </Routes>
+     
+     <FooterApp/>
     </div>
   );
 }
+
 
 export default App;
