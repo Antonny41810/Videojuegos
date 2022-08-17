@@ -8,13 +8,13 @@ import './style.css';
 
 export const NavbarApp = () => {
   return (
-    <Navbar  bg="dark" variant="dark">
+    <Navbar  bg="dark" variant="light">
       <Container>
       <Navbar.Brand href="#home">
             <img
               alt=""
               src={Logo}
-              width="60"
+              width="65"
               height="40"
               className="d-inline-block align-top"
             />{' '}
@@ -22,7 +22,7 @@ export const NavbarApp = () => {
           </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="me-auto text">
             <Link to="/" className='nav-link'>Home</Link>
             <Link to="/personajes" className='nav-link'>Personajes</Link>
             <Link to="/planetas" className='nav-link'>Planetas</Link>

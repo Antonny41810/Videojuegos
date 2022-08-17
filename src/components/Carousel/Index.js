@@ -5,11 +5,11 @@ import Imagen2 from '../../Assets/Img/slider2.png';
 import Imagen3 from '../../Assets/Img/slider3.png';
 import Imagen4 from '../../Assets/Img/slider4.jpg';
 import Imagen5 from '../../Assets/Img/slider5.jpg';
-
+import './style.css';
 
 export const CarouselApp = () => {
   return (
-    <Carousel fade>
+    <Carousel>
     <Carousel.Item>
       <img
         className="d-block w-100 "

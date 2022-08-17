@@ -1,6 +1,9 @@
 .titulo{
 font-family: fantasy;
+color: black;
+text-shadow: 0px 0px 8px yellow;
 }
 .texto {
     font-family: Lucida Console;
+    text-shadow: 0px 0px 20px white;
 }

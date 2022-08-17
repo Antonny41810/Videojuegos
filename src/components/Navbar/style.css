@@ -1,3 +1,10 @@
-.Nav {
-    font-family: Lucida Console;
+
+.text{
+    font-family: fantasy;
+    font-size: 20px;
+    text-shadow: 0px 0px 4px white;
+    
+}
+.text :hover{
+    text-shadow: 0px 0px 3px yellow;
 }

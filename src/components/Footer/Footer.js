@@ -24,7 +24,7 @@ export const FooterApp = () => {
             
             <div className="col-lg-5 col-md-12 mb-4 mb-md-0 text-light d-flex justify-content-center align-items-center">
       
-              <p className="text-center h5">
+              <p className="text-center h5 text2">
                <strong >Antony Camilo Linares Portillo</strong>
               </p>
             </div>
@@ -34,7 +34,7 @@ export const FooterApp = () => {
             <div className="col-lg-4 col-md-12 mb-4 mb-md-0 text-light d-flex justify-content-center align-items-center">
           
       
-              <p className="text-center h6">
+              <p className="text-center h6 text2">
                <strong>Correo: </strong>Aclinares78@misena.edu.co <br></br><br></br>
                <strong>Celular: </strong>3117426985 <br></br><br></br>
                <strong>Direccion: </strong>Calle 42C #T2-35

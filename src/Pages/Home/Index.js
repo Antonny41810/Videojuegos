@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { CarouselApp } from '../../components/Carousel/Index';
 import { TextoApp } from '../../components/Texto/Index';
 import { Card } from '../../components/Cards/Index';
+import './style.css'
 
 export const Home = () => {
 
@@ -13,13 +14,13 @@ export const Home = () => {
       <CarouselApp/>
       </div>
 
-      <div className='container'>
+      <div className='container text-white'>
       <TextoApp/>
       </div>
 
-      <div className='ContainerCard'>
+     
       <Card/>
-      </div>
+      
           
           
     </div>

@@ -1,3 +1,40 @@
-.card{
-    box-shadow: 0px 0px 10px blue;
+/* .Card{
+    overflow-y: scroll;
+    display: flex;
+} */
+
+.Card .tiutlo{
+    text-shadow: 0px 0px 3px yellow;
+}
+
+.card .fondo{
+    background-image: url(../../Assets/Img/galaxia.jpeg);
+}
+
+.texto-carta{
+    height: 10vh;
+    overflow-y: scroll;
+}
+.texto-carta::-webkit-scrollbar {
+    width: 5px;     /* Tamaño del scroll en vertical */
+    height: 1px;    /* Tamaño del scroll en horizontal */
+    /* display: none;  Ocultar scroll */
+}
+.texto-carta::-webkit-scrollbar-thumb {
+    background: yellow;
+    border-radius: 10px;
+}
+
+/* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+.texto-carta::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Cambiamos el fondo cuando esté en active */
+.texto-carta::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+}
+.contador{
+    color: white;
 }
