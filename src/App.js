@@ -11,6 +11,8 @@ import { PersonajesApp } from './Pages/Personajes/Index';
 import { PlanetasApp } from './Pages/Planetas/Index';
 import NavbarApp from './components/Navbar/Navbar';
 import FooterApp from './components/Footer/Footer';
+import { Detalle } from './Pages/Detalle/Detalle';
+
 
 
 
@@ -22,6 +24,7 @@ function App() {
        <Route path='/' element={<Home />}/>
        <Route path='/personajes' element={<PersonajesApp />}/>
        <Route path='/planetas' element={<PlanetasApp />}/>
+       <Route path='/detalle/:name' element={<Detalle/>}/>
      </Routes>
      
      <FooterApp/>

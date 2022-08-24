@@ -1,9 +1,11 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
+import { Link } from 'react-router-dom';
 import './style.css'
 
 export const CartasPersonajes = (props) => {
+
   return (
       <Card style={{ width: '18rem',  }}>
       <Card.Body className='fondo'>
@@ -20,7 +22,9 @@ export const CartasPersonajes = (props) => {
         <ListGroup.Item><strong>Genero: </strong>{props.genero}</ListGroup.Item>
       </ListGroup>
       <Card.Body>
-      <center><a className='btn btn-white btn-animate m-2'>Mas Información</a></center>
+      <Link to={`/Detalle/${props.name}`} >
+      <center><button className='btn btn-white btn-animate m-2'>Detalle</button></center>
+      </Link>
       </Card.Body>            
     </Card>
   

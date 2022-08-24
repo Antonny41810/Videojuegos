@@ -3,7 +3,7 @@ import { UsePerson } from "../../Hooks/UsePerson";
 import { CartasPersonajes } from "./CartasPersonajes";
 import image from "../../Assets/Img/fondop.jpg";
 import "./style.css";
-//import { BsFillArrowRight, BsFillArrowLeft } from "react-icons/bs";
+
 
 export const PersonajesApp = () => {
   const { getAllPerson, dataPeople, Contador, disminuir, aumentar } =
@@ -22,6 +22,7 @@ export const PersonajesApp = () => {
           return (
             <CartasPersonajes
               key={people.name}
+              name={people.name}
               imagen={image}
               nombre={people.name}
               altura={people.height}

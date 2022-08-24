@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 export const UsePerson = () => {
+
   const [dataPeople, setDataPeople] = useState([]);
   
   const [Contador, setContador] = useState(1);
@@ -15,6 +16,10 @@ export const UsePerson = () => {
   const aumentar = () => {
     setContador(Contador + 1);
   };
+  
+  const back = () => {
+    window.history.go(-1)
+  }
 
   const getAllPerson = async (numberPage) => {
     try {
@@ -40,6 +45,7 @@ export const UsePerson = () => {
     dataPeople,
     disminuir,
     aumentar,
-    Contador
+    Contador,
+    back
   };
 };
