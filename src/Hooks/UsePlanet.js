@@ -4,6 +4,8 @@ export const UsePlanet = () => {
 
     const [dataPlanet, setDataPlanet] = useState([])
 
+    const {dataPlanetPerson, setDataPlanetPerson} = useState([])
+
     const [Contador, setContador] = useState(1);
  
   const disminuir = () => {
@@ -16,6 +18,8 @@ export const UsePlanet = () => {
   const aumentar = () => {
     setContador(Contador + 1);
   };
+
+  
 
 const getAllPlanet = async (numberPage) => {
   try{
@@ -37,11 +41,32 @@ const getAllPlanet = async (numberPage) => {
       }
 };
 
+const detailPlanet = async (url) => {
+  try{
+    var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+      };
+      
+      await fetch(
+        url, 
+        requestOptions
+        )
+        .then(response => response.json())
+        .then(result => setDataPlanetPerson([result]))
+        .catch(error => console.log('error', error));
+      }
+      catch(error){
+        console.log(error);
+      }
+};
   return {
       getAllPlanet,
       dataPlanet,
       disminuir,
       aumentar,
-      Contador
+      Contador,
+      dataPlanetPerson,
+      detailPlanet
   };
 };

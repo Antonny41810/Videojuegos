@@ -5,9 +5,12 @@ import ListGroup from "react-bootstrap/ListGroup";
 import image from "../../Assets/Img/fondop.jpg";
 import Card from "react-bootstrap/Card";
 import "./style.css";
+import { UsePlanet } from "../../Hooks/UsePlanet";
 
 export const Detalle = () => {
   const { back, getAllPerson, Contador, dataPeople } = UsePerson();
+
+  const { detailPlanet, dataPlanetPerson } = UsePlanet();
 
   const params = useParams();
 
@@ -21,8 +24,13 @@ export const Detalle = () => {
     getAllPerson(Contador);
   }, [dataPeople]);
 
-  const filtro = dataPeople.filter((detalle) => detalle.name === nombre);
-  console.log(filtro);
+  const filtrar = dataPeople.filter((detalle) => detalle.name === nombre);
+
+
+  const mapeo = filtrar.map((world) => world.homeworld);
+  var homeworld = mapeo[0];
+  detailPlanet(homeworld);
+
 
   return (
     <div>
@@ -31,13 +39,13 @@ export const Detalle = () => {
       </button>
       <br></br>
       <h1 className="titulo">Detalles Personaje {params.name}</h1>
-      <div className="container d-flex justify-content-center align-items-center">
-        <div className="imagen m-5">
+      <div className="container d-flex justify-content-center align-items-center flex-wrap">
+     
           <img src={image} width="550" />
-        </div>
+       
 
-        <div className="items">
-          {filtro.map((personaje) => (
+        <div className="items m-5">
+          {filtrar.map((personaje) => (
             <div key={personaje.name}>
               <ListGroup.Item>
                 <strong>Altura: </strong>
@@ -80,11 +88,11 @@ export const Detalle = () => {
         </div>
       </div>
 
-      <div className="container d-flex justify-content-center align-items-center">
+      <div className="container d-flex justify-content-center align-items-center flex-wrap">
         <div className="trajet m-4">
-          {filtro.map((personaje) => (
+          {filtrar.map((personaje) => (
             <div key={personaje.name}>
-              <Card>
+              <Card style={{ width: "18rem", margin: "0" }}>
                 <Card.Header>Peliculas</Card.Header>
                 <Card.Body>
                   <Card.Text>{personaje.films}</Card.Text>
@@ -95,9 +103,9 @@ export const Detalle = () => {
         </div>
 
         <div className="trajet m-4">
-          {filtro.map((personaje) => (
+          {filtrar.map((personaje) => (
             <div key={personaje.name}>
-              <Card>
+              <Card style={{ width: "18rem", margin: "0" }}>
                 <Card.Header>Vehiculos</Card.Header>
                 <Card.Body>
                   <Card.Text>{personaje.vehicles}</Card.Text>
@@ -108,21 +116,16 @@ export const Detalle = () => {
         </div>
 
         <div className="trajet m-4">
-          {filtro.map((personaje) => (
-            <div key={personaje.name}>
-              <Card>
-                <Card.Header>Planetas</Card.Header>
+        {dataPlanetPerson?.length > 0 && (
+              <Card style={{ width: "18rem" }}>
+                <Card.Header>Planeta Nativo</Card.Header>
                 <Card.Body>
-                  <Card.Text>
-                    With supporting text below as a natural lead-in to
-                    additional content.
-                  </Card.Text>
+                  <Card.Text>{dataPlanetPerson[0].name}</Card.Text>
                 </Card.Body>
               </Card>
-            </div>
-          ))}
+               )}
+            </div>          
         </div>
       </div>
-    </div>
   );
 };
